@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Cobrinha (Snake)</title>
+    <link rel="stylesheet" href="snake.css"> 
+</head>
+<body>
+    <div class="container">
+        <div id="placar" class="placar">
+            Pontos: 0 | Recorde: 0 | Vidas: ❤️❤️❤️ | Tempo: 00:00
+        </div>
+
+       <div id="mensagem" class="mensagem inicial">
+            <h3>Bem-vindo(a) ao cobra kai!</h3>
+            <p>Use as "Setas do Teclado" para atacar o inimigo.</p>
+            <p>Pressione a tecla "P" para Pausar combate e para VOlTA a luta.</p>
+            <p>Clique em **INICIAR** para começar o combate.</p>
+        </div>
+
+        <div id="tabuleiro">
+            <div id="menuPausa" style="display: none;">
+                <h2>Jogo Pausado</h2>
+                <p>Pressione a tecla **P** ou clique em **Continuar**.</p>
+                <button onclick="alternarPausa()">Continuar</button>
+                <button onclick="fimDeJogo()">Sair para Menu</button>
+            </div>
+        </div>
+        
+        <div id="dificuldade-selecao" class="dificuldade-selecao">
+        </div>
+
+        <div class="controles">
+            <button id="btnIniciar">INICIAR</button>
+            <button id="btnReiniciar">REINICIAR</button>
+        </div>
+        
+    </div>
+
+    <script src="snake.js"></script> 
+</body>
+</html>

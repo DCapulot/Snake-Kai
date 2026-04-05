@@ -1,0 +1,264 @@
+:root {
+    --tamanho-tabuleiro: 400px; 
+    --tamanho-celula: 20px;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    
+   
+    background-image: url('cobra2.webp'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-color: #33333300;
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.61); 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    color: #fcf800;
+    margin-bottom: 10px;
+}
+
+.placar {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #ffee00;
+}
+
+.mensagem {
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.mensagem.inicial {
+    background-color: #000000;
+    color: #e70a0a; 
+    padding: 15px;
+}
+
+.mensagem.jogando {
+    color: #e5ff00;
+}
+
+.mensagem.pausado {
+    background-color: #ffeb3b; 
+    color: #f57f17;
+}
+
+.mensagem.fim-jogo {
+    background-color: #ffebee;
+    color: #d32f2f;
+    animation: blink 0.5s infinite alternate;
+}
+
+.mensagem.perdeu-vida {
+    background-color: #ffee00; 
+    color: #e60000;
+}
+
+@keyframes blink {
+    from { opacity: 1; }
+    to { opacity: 0.7; }
+}
+
+
+#tabuleiro {
+    width: var(--tamanho-tabuleiro);
+    height: var(--tamanho-tabuleiro);
+    background-color: #a7d97b; 
+    border: 5px solid #fbff02;
+    position: relative; 
+    margin: 20px auto;
+    overflow: hidden; 
+}
+
+
+.obstaculo {
+    width: var(--tamanho-celula);
+    height: var(--tamanho-celula);
+    position: absolute;
+    box-sizing: border-box;
+    
+    background-color: #333; 
+    border: 1px solid #000;
+    border-radius: 2px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 5; 
+}
+
+
+#menuPausa {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); 
+    z-index: 10; 
+    
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    color: rgb(241, 0, 0);
+    font-size: 1.5em;
+    text-align: center;
+}
+
+#menuPausa h2 {
+    color: #f1c40f; 
+    margin-bottom: 5px;
+}
+
+#menuPausa p {
+    margin-bottom: 20px;
+}
+
+#menuPausa button {
+    margin: 8px;
+    padding: 10px 25px;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #e7e300; 
+    color: rgb(255, 0, 0);
+    transition: background-color 0.3s;
+}
+
+#menuPausa button:hover {
+    background-color: #b92929;
+}
+
+
+.segmento-cobra {
+    width: var(--tamanho-celula);
+    height: var(--tamanho-celula);
+    background-color: #000000; 
+    position: absolute;
+    box-sizing: border-box;
+    border: 1px solid #f8f400;
+    border-radius: 2px;
+}
+
+.cabeca-cobra {
+    background-color: #ffee00; 
+    border: 1px solid #020202;
+    border-radius: 4px;
+}
+
+.comida {
+    width: var(--tamanho-celula);
+    height: var(--tamanho-celula);
+    position: absolute;
+    border-radius: 50%; 
+    box-sizing: border-box;
+}
+
+.comida-normal {
+    background-color: #ffffff; 
+    box-shadow: 0 0 5px #e6e6e6;
+}
+
+.comida-especial {
+    background-color: #f18f0f; 
+    border: 2px solid #e67e22;
+    box-shadow: 0 0 8px #f1970f;
+}
+
+.comida-rara {
+    background-color: #59b659; 
+    border: 2px solid #3c9858;
+    box-shadow: 0 0 10px #6cb659;
+    animation: pulsar 1s infinite alternate;
+}
+
+@keyframes pulsar {
+    from { transform: scale(0.9); }
+    to { transform: scale(1.1); }
+}
+
+.controles button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #eeff00;
+    color: rgb(255, 0, 0);
+    transition: background-color 0.3s;
+}
+
+.controles button:hover {
+    background-color: #ff0000;
+}
+
+.controles button:disabled {
+    background-color: #f0d807;
+    cursor: not-allowed;
+}
+
+
+.mensagem h3 {
+    margin-top: 0;
+    color: #f8f400;
+    font-size: 1.4em;
+}
+
+.mensagem p {
+    margin: 5px 0;
+    font-size: 0.95em;
+    color: #ffee00; 
+}
+
+.dificuldade-selecao {
+    margin: 15px 0 10px;
+    padding: 10px;
+    border: 1px solid #ff0000;
+    border-radius: 5px;
+    background-color: #fffb06a4;
+}
+
+.dificuldade-selecao button {
+    padding: 8px 12px;
+    margin: 0 5px;
+    font-size: 0.9em;
+    cursor: pointer;
+    border: 1px solid #f56403;
+    border-radius: 4px;
+    background-color: #f3f3f3;
+    color: #46f700;
+    transition: all 0.2s;
+}
+
+.dificuldade-selecao button:hover {
+    background-color: #f30909a9;
+}
+
+.dificuldade-selecao button.selecionado {
+    background-color: #efff08; 
+    color: rgb(255, 0, 0);
+    border-color: #000000;
+    font-weight: bold;
+    transform: scale(1.05);
+    box-shadow: 0 2px 4px rgba(255, 8, 8, 0.2);
+}
