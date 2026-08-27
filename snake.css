@@ -11,8 +11,7 @@ body {
     min-height: 100vh;
     margin: 0;
     
-   
-    background-image: url('cobra2.webp'); 
+    background-image: url('imagens/cobra2.webp');
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat;
