@@ -12,7 +12,7 @@ O HTML organiza o placar, mensagens, tabuleiro, seleção de dificuldade e contr
 
 ## 🔗 Link do Projeto
 
-[👉 Acesse o projeto aqui](COLE_AQUI_O_LINK)
+[👉 Acesse o projeto aqui](https://dcapulot.github.io/Snake-Kai/)
 
 ## 🥋 Funcionalidades
 
